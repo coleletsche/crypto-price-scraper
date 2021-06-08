@@ -7,7 +7,7 @@ from termcolor import colored
 UP = "\u25B2"
 DOWN = "\u25BC"
 NONE = "\u25A0"
-
+ 
 QUERY_BUFFER_TIME = 30
 REQUEST_BUFFER = 0
 
@@ -69,7 +69,7 @@ while True:
         with open("price_history.txt", "a") as f:
             f.write("%s %s %s\n" %(key, str(price), datetime.now().strftime("%d/%m/%Y %H:%M:%S")))
 
-        time.sleep(CLOUDFLARE_BUFFER)
+        time.sleep(REQUEST_BUFFER)
         
     print("====================================================")
     print("\nSleeping...\n")
