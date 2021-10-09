@@ -51,6 +51,7 @@ while True:
             soup = BeautifulSoup(page.content, 'html.parser')
             price = float(soup.find('div', class_='priceValue').text[1:].replace(',', ''))
         except AttributeError:
+            print('| Failed to retrieve %s price info       \t   |' %key)
             continue
 
         precent_change = ((price - prev_prices[key]) / prev_prices[key]) * 100
