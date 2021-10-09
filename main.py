@@ -49,7 +49,7 @@ while True:
         try:
             page = requests.get(COIN_URLS[key])
             soup = BeautifulSoup(page.content, 'html.parser')
-            price = float(soup.find('div', class_='priceValue___11gHJ').text[1:].replace(',', ''))
+            price = float(soup.find('div', class_='priceValue').text[1:].replace(',', ''))
         except AttributeError:
             continue
 
